@@ -1,0 +1,309 @@
+/* --- General Styles --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF0F5; /* LavenderBlush - light pink */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+header {
+    background: #FFB6C1; /* LightPink */
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #DB7093 /* PaleVioletRed */ 5px solid;
+    animation: slideDown 0.7s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+header .logo {
+    float: left;
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    animation: pulseLogo 3s infinite ease-in-out;
+}
+
+@keyframes pulseLogo {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+header .logo .subtitle {
+    font-size: 0.6em;
+    font-weight: normal;
+    color: #FF69B4; /* HotPink */
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 15px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover, header nav a.active {
+    color: #DB7093; /* PaleVioletRed */
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+/* --- Hero Section (Landing Page) --- */
+.hero {
+    background: #FFC0CB; /* Pink */
+    color: #333;
+    padding: 60px 0;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #DB7093; /* PaleVioletRed */
+    animation: textPopUp 1s 0.5s ease-out backwards; /* delay after fadeIn */
+}
+
+@keyframes textPopUp {
+    0% { transform: scale(0.5); opacity: 0; }
+    80% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #FF69B4; /* HotPink */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    background: #DB7093; /* PaleVioletRed */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* --- Features Section (Landing Page) --- */
+.features {
+    padding: 40px 0;
+    background: #FFF5EE; /* Seashell - very light pinkish */
+}
+
+.features .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* For responsiveness */
+}
+
+.feature-item {
+    background: #fff;
+    padding: 20px;
+    margin: 15px;
+    width: calc(33.333% - 40px); /* Adjust width for spacing */
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(219, 112, 147, 0.3); /* PaleVioletRed shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0; /* Start hidden for animation */
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.2s; }
+.feature-item:nth-child(2) { animation-delay: 0.4s; }
+.feature-item:nth-child(3) { animation-delay: 0.6s; }
+
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.feature-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(219, 112, 147, 0.5);
+}
+
+.feature-item h3 a {
+    color: #FF69B4; /* HotPink */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.feature-item h3 a:hover {
+    color: #DB7093; /* PaleVioletRed */
+}
+
+/* --- Page Title (for Grammar, Verb, Vocab pages) --- */
+.page-title {
+    background: #FFDAB9; /* PeachPuff - light orange pink */
+    color: #C71585; /* MediumVioletRed */
+    padding: 30px 0;
+    text-align: center;
+    animation: slideInFromLeft 1s ease-out;
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.page-title h2 {
+    margin: 0;
+    font-size: 32px;
+}
+
+/* --- Content Section (for Grammar, Verb, Vocab pages) --- */
+.content-section {
+    padding: 40px 0;
+}
+
+.learning-card, .vocab-card {
+    background: #fff;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(219, 112, 147, 0.2); /* PaleVioletRed shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: zoomIn 0.7s ease-out forwards;
+    opacity: 0; /* Start hidden for animation */
+}
+
+.learning-card:nth-child(odd) { animation-delay: 0.1s; }
+.learning-card:nth-child(even) { animation-delay: 0.2s; }
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.learning-card:hover, .vocab-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(219, 112, 147, 0.4);
+}
+
+.learning-card h3, .vocab-card h4 {
+    color: #C71585; /* MediumVioletRed */
+    margin-top: 0;
+}
+
+.learning-card ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+.learning-card ul li {
+    margin-bottom: 5px;
+}
+
+/* Vocabulary Page Specific */
+.vocabulary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.vocab-card {
+    margin-bottom: 0; /* Handled by gap */
+    text-align: left;
+}
+
+.vocab-card:nth-child(1) { animation-delay: 0.1s; }
+.vocab-card:nth-child(2) { animation-delay: 0.2s; }
+.vocab-card:nth-child(3) { animation-delay: 0.3s; }
+.vocab-card:nth-child(4) { animation-delay: 0.4s; }
+.vocab-card:nth-child(5) { animation-delay: 0.5s; }
+.vocab-card:nth-child(6) { animation-delay: 0.6s; }
+
+
+/* --- Footer --- */
+footer {
+    background: #DB7093; /* PaleVioletRed */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    animation: slideUp 0.7s ease-out 0.5s backwards; /* Delay to let content load */
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- Responsive Design (Simple Example) --- */
+@media(max-width: 768px){
+    header .logo, header nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    header nav ul li {
+        display: block;
+        padding: 10px 0;
+    }
+    .features .container {
+        flex-direction: column;
+    }
+    .feature-item {
+        width: 90%;
+        margin: 15px auto;
+    }
+    .container {
+        width: 95%;
+    }
+    .vocabulary-grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+}
